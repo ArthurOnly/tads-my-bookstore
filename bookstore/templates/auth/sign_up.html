@@ -15,7 +15,7 @@
         </div>
         <div class="my-auto container md:row-span-2 mx-auto max-w-xs flex flex-col gap-8">
             <h1 class="text-3xl text-blue-600 font-bold">Login</h1>
-            <form class="flex flex-col gap-4" method="post" action="{% url 'auth.sign_in' %}">
+            <form class="flex flex-col gap-4">
                 {% csrf_token %}
                 {{ form }}
                 <button type="submit" class="bg-blue-600 rounded px-2 py-2 text-white font-bold">{% translate "Login" %}</button>
