@@ -27,10 +27,27 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Other definitions
+
+TAILWIND_APP_NAME = 'tailwind_theme'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+    "localhost"
+]
+
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+
 
 # Application definition
 
 INSTALLED_APPS = [
+    'bookstore',
+
+    'tailwind',
+    'tailwind_theme',
+    'django_browser_reload',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = 'core.urls'
