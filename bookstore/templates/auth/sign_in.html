@@ -15,12 +15,12 @@
         </div>
         <div class="my-auto container md:row-span-2 mx-auto max-w-xs flex flex-col gap-8">
             <h1 class="text-3xl text-amber-800 font-bold">Login</h1>
-            <form class="flex flex-col gap-4" method="post" action="{% url 'auth.sign_in' %}">
+            <form class="flex flex-col gap-4" method="POST" action="{% url 'accounts.login' %}">
                 {% csrf_token %}
                 {{ login_form }}
                 <button type="submit" class="bg-amber-800 rounded px-2 py-2 text-white font-bold">{% translate "Login" %}</button>
             </form>
-            <p>Não tem uma conta? <a href="{% url 'auth.sign_up' %}" class="text-amber-800">cadastre-se</a></p>
+            <p>Não tem uma conta? <a href="{% url 'accounts.register' %}" class="text-amber-800">cadastre-se</a></p>
         </div>
     </section>
 {% endblock %}

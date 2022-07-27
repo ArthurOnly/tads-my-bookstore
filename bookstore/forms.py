@@ -1,4 +1,4 @@
-from django.forms import Form, ValidationError, CharField, PasswordInput, EmailField
+from django.forms import Form, ValidationError, CharField, PasswordInput, EmailField, ModelChoiceField
 from django.utils.translation import gettext as _
 from django.contrib.auth.models import User
 
@@ -29,3 +29,8 @@ class RegisterForm(Form):
             raise ValidationError(_('The email is already been taken.'))
 
         return email
+
+class BookCreateForm(Form):
+    title = CharField(label=_('Title'), max_length=254)
+    editor = CharField(label=_('Editor'), max_length=254)
+    volumn = CharField(label=_('Volumn'), max_length=100)

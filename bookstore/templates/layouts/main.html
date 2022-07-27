@@ -1,0 +1,27 @@
+{% load tailwind_tags %}
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   {% tailwind_css %}
+   <title>{% block title %}{% endblock %}</title>
+</head>
+<body class="text-neutral-800 bg-neutral-50">
+   {% block content %}{% endblock %}
+
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   {% if messages %}
+      {% for message in messages %}
+         <script>
+            Swal.fire({
+               text: '{{ message }}',
+               icon: '{{ message.tags }}',
+               confirmButtonText: 'Ok',
+               confirmButtonColor: '#222'
+            })
+         </script>
+      {% endfor %}
+   {% endif %}
+</body>
+</html>
