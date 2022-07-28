@@ -10,10 +10,19 @@ class Book(models.Model):
     volumn = models.CharField(max_length=100, null=True)
     owner = models.ForeignKey(User, verbose_name=_("Owner"), on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.title
+
+    def is_in_loan(self):
+        return not self.loan_set.filter(returned=False).exists()
+
 class LoanUser(models.Model):
     name = models.CharField(_("Name"), max_length=50)
     celphone = models.CharField(_("Celphone"), max_length=50)
     email = models.EmailField(_("Email"), max_length=254)
+
+    def __str__(self):
+        return self.name
 
 class Loan(models.Model):
     from_user = models.ForeignKey(User, verbose_name=_("From user"), on_delete=models.CASCADE)

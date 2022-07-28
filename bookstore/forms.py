@@ -1,4 +1,4 @@
-from django.forms import Form, ValidationError, CharField, PasswordInput, EmailField, ModelChoiceField
+from django.forms import BooleanField, DateField, DateInput, Form, ValidationError, CharField, PasswordInput, EmailField, ModelChoiceField
 from django.utils.translation import gettext as _
 from django.contrib.auth.models import User
 
@@ -34,3 +34,13 @@ class BookCreateForm(Form):
     title = CharField(label=_('Title'), max_length=254)
     editor = CharField(label=_('Editor'), max_length=254)
     volumn = CharField(label=_('Volumn'), max_length=100)
+
+class LoanCreateForm(Form):
+    initial_date = DateField(widget=DateInput(format='%d-%m-%Y'), label=_('Initial date'))
+    end_date = DateField(widget=DateInput, label=_('End date'))
+    returned = BooleanField(label=_('Returned'))
+
+class LoanUserCreateForm(Form):
+    name = CharField(label=_('Name'), max_length=100)
+    email = EmailField(label=_('Email'), max_length=100)
+    celphone = CharField(label=_('Celphone'), max_length=100)

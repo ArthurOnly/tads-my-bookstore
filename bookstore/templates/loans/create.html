@@ -6,9 +6,9 @@
 
 {% block content %}
     <section class="container mx-auto bg-white rounded mt-8 p-4 rounded max-w-md">
-        <form action="{% url 'books.create' %}" class="flex flex-col gap-4" method="POST">
+        <form action="{% url 'loans.create' %}" class="flex flex-col gap-4" method="POST">
             {% csrf_token %}
-            {{ book_form }}
+            {{ loan_form }}
             <button type="submit" class="bg-amber-800 rounded px-2 py-2 text-white font-bold">{% translate "Create" %}</button>
         </form>
     </section>

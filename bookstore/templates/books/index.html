@@ -5,7 +5,37 @@
 {% block title %} Livros {% endblock %}
 
 {% block content %}
-    <section class="container mx-auto bg-white rounded">
-        
+    <section class="container mx-auto bg-white rounded shadow mt-8 p-4">
+        <div class="flex justify-between">
+            <h1 class="font-bold text-3xl">Book list</h1>
+            <a class="bg-amber-800 px-4 py-2 rounded font-bold text-white" href="{% url 'books.create' %}">Register new</a>
+        </div>
+        <div class="mt-4">
+            <table class="w-full">
+                <thead>
+                    <tr>
+                        <th class="py-2 text-start">{% translate 'Title' %}</th>
+                        <th class="py-2 text-start">{% translate 'Editor' %}</th>
+                        <th class="py-2 text-start">{% translate 'Available'%}</th>
+                        <th class="py-2 text-start">{% translate 'Actions'%}</th>
+                    </tr>
+                </thead>
+            {% for book in books %}
+                <tr class="border-b border-neutral-100">
+                    <td class="py-4">{{ book.title }}</td>
+                    <td>{{ book.editor }}</td>
+                    <td>
+                        {{ book.is_in_loan }}    
+                    </td>
+                    <td>
+                        <a class="border border-amber-800 rounded py-2 px-4 text-amber-700" href="#">{% translate 'view' %}</a>
+                        <a class="border border-amber-800 rounded py-2 px-4 text-amber-700" href="#">{% translate 'loan' %}
+                    </td>
+                </tr>
+            {% empty %}
+                <p>{% translate 'Empty' %}</p>
+            {% endfor %}
+            </table>
+        </div>
     </section>
 {% endblock %}
