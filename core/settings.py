@@ -36,7 +36,7 @@ INTERNAL_IPS = [
     "localhost"
 ]
 
-NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+#NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 
 # Application definition
 

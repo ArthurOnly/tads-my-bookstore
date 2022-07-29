@@ -6,6 +6,9 @@
 
 {% block content %}
     <section class="container mx-auto bg-white rounded mt-8 p-4 rounded max-w-md">
+        <div class="mb-4">
+        <a href="{% url 'loans_user.create' %}" class="mb-8 text-amber-800 font-bold">{% translate "Register new person" %}</a>
+        </div>
         <form action="{% url 'loans.create' %}" class="flex flex-col gap-4" method="POST">
             {% csrf_token %}
             {{ loan_form }}

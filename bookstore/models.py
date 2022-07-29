@@ -14,12 +14,13 @@ class Book(models.Model):
         return self.title
 
     def is_in_loan(self):
-        return not self.loan_set.filter(returned=False).exists()
+        return self.loan_set.filter(returned=False).exists()
 
 class LoanUser(models.Model):
     name = models.CharField(_("Name"), max_length=50)
     celphone = models.CharField(_("Celphone"), max_length=50)
     email = models.EmailField(_("Email"), max_length=254)
+    responsible = models.ForeignKey(User, verbose_name=_("Responsible"), on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

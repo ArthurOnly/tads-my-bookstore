@@ -2,6 +2,8 @@ from django.forms import BooleanField, DateField, DateInput, Form, ValidationErr
 from django.utils.translation import gettext as _
 from django.contrib.auth.models import User
 
+from bookstore.models import Book, LoanUser
+
 class LoginForm(Form):
     username = CharField(label=_('Username'), max_length=100)
     password = CharField(label=_('Password'), max_length=100, widget=PasswordInput)
@@ -36,9 +38,27 @@ class BookCreateForm(Form):
     volumn = CharField(label=_('Volumn'), max_length=100)
 
 class LoanCreateForm(Form):
-    initial_date = DateField(widget=DateInput(format='%d-%m-%Y'), label=_('Initial date'))
-    end_date = DateField(widget=DateInput, label=_('End date'))
-    returned = BooleanField(label=_('Returned'))
+    def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user')
+        super().__init__(*args, **kwargs)
+
+        #books for the user and not in loan
+        self.fields['book'].queryset = Book.objects.filter(owner=user).exclude(loan__returned=False)
+        self.fields['to_user'].queryset = LoanUser.objects.filter(responsible=user)
+
+    book = ModelChoiceField(label=_('Book'), queryset=Book.objects.all())
+    to_user = ModelChoiceField(label=_('To'), queryset=Book.objects.all())
+    initial_date = DateField(widget=DateInput(attrs={'type': 'date'}), label=_('Initial date'))
+    end_date = DateField(widget=DateInput(attrs={'type': 'date'}), label=_('End date'))
+    returned = BooleanField(label=_('Returned'), required=False)
+
+    def clean_book(self):
+        book = self.cleaned_data['book']
+
+        if book.is_in_loan():
+            raise ValidationError(_('The book is already in loan.'))
+
+        return book
 
 class LoanUserCreateForm(Form):
     name = CharField(label=_('Name'), max_length=100)
