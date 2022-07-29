@@ -1,0 +1,182 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-29 17:24-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: bookstore/forms.py:8 bookstore/forms.py:12
+msgid "Username"
+msgstr ""
+
+#: bookstore/forms.py:9 bookstore/forms.py:16
+msgid "Password"
+msgstr ""
+
+#: bookstore/forms.py:13 bookstore/forms.py:65 bookstore/models.py:22
+msgid "Email"
+msgstr ""
+
+#: bookstore/forms.py:14
+msgid "First name"
+msgstr ""
+
+#: bookstore/forms.py:15
+msgid "Last name"
+msgstr ""
+
+#: bookstore/forms.py:17
+msgid "Password confirmation"
+msgstr ""
+
+#: bookstore/forms.py:23
+msgid "The username is already been taken."
+msgstr ""
+
+#: bookstore/forms.py:31
+msgid "The email is already been taken."
+msgstr ""
+
+#: bookstore/forms.py:36 bookstore/templates/books/index.html:17
+msgid "Title"
+msgstr ""
+
+#: bookstore/forms.py:37 bookstore/templates/books/index.html:18
+msgid "Editor"
+msgstr ""
+
+#: bookstore/forms.py:38
+msgid "Volumn"
+msgstr ""
+
+#: bookstore/forms.py:49 bookstore/models.py:31
+#: bookstore/templates/loans/index.html:17
+msgid "Book"
+msgstr ""
+
+#: bookstore/forms.py:50 bookstore/templates/loans/index.html:18
+msgid "To"
+msgstr ""
+
+#: bookstore/forms.py:51 bookstore/models.py:32 bookstore/models.py:33
+msgid "Initial date"
+msgstr ""
+
+#: bookstore/forms.py:52
+msgid "End date"
+msgstr ""
+
+#: bookstore/forms.py:53 bookstore/models.py:34
+#: bookstore/templates/loans/index.html:20
+msgid "Returned"
+msgstr ""
+
+#: bookstore/forms.py:59
+msgid "The book is already in loan."
+msgstr ""
+
+#: bookstore/forms.py:64 bookstore/models.py:20
+msgid "Name"
+msgstr ""
+
+#: bookstore/forms.py:66 bookstore/models.py:21
+msgid "Celphone"
+msgstr ""
+
+#: bookstore/models.py:11
+msgid "Owner"
+msgstr ""
+
+#: bookstore/models.py:23
+msgid "Responsible"
+msgstr ""
+
+#: bookstore/models.py:29
+msgid "From user"
+msgstr ""
+
+#: bookstore/models.py:30
+msgid "To user"
+msgstr ""
+
+#: bookstore/templates/auth/sign_in.html:21
+msgid "Login"
+msgstr ""
+
+#: bookstore/templates/auth/sign_up.html:21
+msgid "Registrar-se"
+msgstr ""
+
+#: bookstore/templates/books/create.html:12
+#: bookstore/templates/loan_user/create.html:12
+#: bookstore/templates/loans/create.html:15
+msgid "Create"
+msgstr ""
+
+#: bookstore/templates/books/index.html:10
+msgid "Book list"
+msgstr ""
+
+#: bookstore/templates/books/index.html:19
+msgid "Available"
+msgstr ""
+
+#: bookstore/templates/books/index.html:20
+#: bookstore/templates/loans/index.html:21
+msgid "Actions"
+msgstr ""
+
+#: bookstore/templates/books/index.html:34
+msgid "Give to"
+msgstr ""
+
+#: bookstore/templates/books/index.html:39
+#: bookstore/templates/loans/index.html:37
+msgid "Empty"
+msgstr ""
+
+#: bookstore/templates/layouts/main.html:22
+msgid "Books"
+msgstr ""
+
+#: bookstore/templates/layouts/main.html:25
+msgid "Loans"
+msgstr ""
+
+#: bookstore/templates/layouts/main.html:28
+msgid "Logout"
+msgstr ""
+
+#: bookstore/templates/loans/create.html:10
+msgid "Register new person"
+msgstr ""
+
+#: bookstore/templates/loans/index.html:19
+msgid "Final date"
+msgstr ""
+
+#: bookstore/templates/loans/index.html:32
+msgid "Register back"
+msgstr ""
+
+#: bookstore/views.py:34 bookstore/views.py:64 bookstore/views.py:83
+#: bookstore/views.py:97 bookstore/views.py:108
+msgid "Success."
+msgstr ""
+
+#: bookstore/views.py:37 bookstore/views.py:67 bookstore/views.py:86
+#: bookstore/views.py:100
+msgid "Verify the data and try again."
+msgstr ""

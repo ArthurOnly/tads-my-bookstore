@@ -70,7 +70,7 @@ def books_create(request: HttpRequest) -> HttpResponse:
 
 @login_required
 def loans_index(request: HttpRequest) -> HttpResponse:
-    loans = Loan.objects.all()
+    loans = Loan.objects.filter(from_user=request.user)
     return render(request, 'loans/index.html', {'loans' : loans})
 
 @login_required
